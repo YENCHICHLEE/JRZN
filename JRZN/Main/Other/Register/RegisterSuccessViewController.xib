@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterSuccessViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EaG-eL-ipN">
+                    <rect key="frame" x="110" y="120" width="100" height="100"/>
+                    <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="0Qe-BH-WVU"/>
+                        <constraint firstAttribute="height" constant="100" id="l6U-Cs-XvV"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="恭喜您，注册成功。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJe-F2-dGA">
+                    <rect key="frame" x="84" y="235" width="153" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="153" id="LR8-z7-1wE"/>
+                        <constraint firstAttribute="height" constant="21" id="MoH-aO-QAY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开启您的金融财富之路吧" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ga-8t-IPA">
+                    <rect key="frame" x="67" y="291" width="187" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="Q4K-qI-a20"/>
+                        <constraint firstAttribute="width" constant="187" id="Rcx-XS-giC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.53725490196078429" green="0.53725490196078429" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cf5-h3-M0g">
+                    <rect key="frame" x="20" y="322" width="280" height="44"/>
+                    <color key="backgroundColor" red="1" green="0.58823529409999997" blue="0.015686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="s9Z-f8-B91"/>
+                    </constraints>
+                    <state key="normal" title="进入首页"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="pushHomePage:" destination="-1" eventType="touchUpInside" id="5gh-xu-uIR"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="7ga-8t-IPA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9ne-qO-4o3"/>
+                <constraint firstItem="Cf5-h3-M0g" firstAttribute="top" secondItem="7ga-8t-IPA" secondAttribute="bottom" constant="10" id="ETy-dV-czi"/>
+                <constraint firstItem="EaG-eL-ipN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="End-9R-zsc"/>
+                <constraint firstItem="7ga-8t-IPA" firstAttribute="top" secondItem="DJe-F2-dGA" secondAttribute="bottom" constant="35" id="QKO-w3-zH4"/>
+                <constraint firstAttribute="trailing" secondItem="Cf5-h3-M0g" secondAttribute="trailing" constant="20" id="g80-tv-dPY"/>
+                <constraint firstItem="DJe-F2-dGA" firstAttribute="top" secondItem="EaG-eL-ipN" secondAttribute="bottom" constant="15" id="k8U-9w-jt9"/>
+                <constraint firstItem="EaG-eL-ipN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="120" id="mfk-vl-2Tj"/>
+                <constraint firstItem="Cf5-h3-M0g" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="ocf-UM-FbA"/>
+                <constraint firstItem="DJe-F2-dGA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="weA-YZ-xXP"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="347" y="235"/>
+        </view>
+    </objects>
+</document>

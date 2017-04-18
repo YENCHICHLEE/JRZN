@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RiskAssessmentViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="让今融指南更懂你" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tpy-b9-WOw">
+                    <rect key="frame" x="20" y="50" width="280" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="oJu-DW-fFZ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.16862745098039217" green="0.1803921568627451" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUu-6b-yOQ">
+                    <rect key="frame" x="20" y="91" width="280" height="110"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="110" id="8lg-6Q-ULj"/>
+                    </constraints>
+                    <attributedString key="attributedText">
+                        <fragment content="您只需花1-2分钟时间就可以通过以下问卷，得出您的投资风险偏好测评结果。我们的智能投顾系统会根据您的风险承受能力为您定制私人化的网贷产品投资配置方案。">
+                            <attributes>
+                                <color key="NSColor" red="0.16862745098039217" green="0.1803921568627451" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="PingFangSC-Regular"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkR-Ei-NRI">
+                    <rect key="frame" x="20" y="201" width="280" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="PaO-zQ-sPp"/>
+                    </constraints>
+                    <attributedString key="attributedText">
+                        <fragment content="当您的资产情况或投资理念发送变化时，请随时进行风险评测，以便我们的智能投顾系统及时调整您的投资方案。">
+                            <attributes>
+                                <color key="NSColor" red="0.16862745098039217" green="0.1803921568627451" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="15" name="PingFangSC-Regular"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVu-8h-iEL">
+                    <rect key="frame" x="110.5" y="301" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="5k7-Y4-aG0"/>
+                        <constraint firstAttribute="width" constant="100" id="dkQ-9x-Lx4"/>
+                    </constraints>
+                    <state key="normal" image="icon_ceping.png"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="OVu-8h-iEL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0zr-gx-mMb"/>
+                <constraint firstAttribute="trailing" secondItem="xUu-6b-yOQ" secondAttribute="trailing" constant="20" id="6qw-x6-uav"/>
+                <constraint firstItem="OVu-8h-iEL" firstAttribute="top" secondItem="vkR-Ei-NRI" secondAttribute="bottom" constant="20" id="7lj-pc-pc1"/>
+                <constraint firstAttribute="trailing" secondItem="Tpy-b9-WOw" secondAttribute="trailing" constant="20" id="JWU-fh-Mdm"/>
+                <constraint firstItem="xUu-6b-yOQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Nab-EQ-zHv"/>
+                <constraint firstItem="xUu-6b-yOQ" firstAttribute="top" secondItem="Tpy-b9-WOw" secondAttribute="bottom" constant="20" id="P0K-TQ-mjI"/>
+                <constraint firstItem="vkR-Ei-NRI" firstAttribute="top" secondItem="xUu-6b-yOQ" secondAttribute="bottom" id="da8-yS-9fk"/>
+                <constraint firstItem="Tpy-b9-WOw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="eKO-I9-bLB"/>
+                <constraint firstAttribute="trailing" secondItem="vkR-Ei-NRI" secondAttribute="trailing" constant="20" id="lIW-TP-IRh"/>
+                <constraint firstItem="Tpy-b9-WOw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="sdY-EB-Fw8"/>
+                <constraint firstItem="vkR-Ei-NRI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="yyh-uK-GWq"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_ceping.png" width="127" height="127"/>
+    </resources>
+</document>

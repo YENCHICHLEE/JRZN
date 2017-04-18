@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+            <link rel="stylesheet" type="text/css" href="../css/reset.css">
+                <link rel="stylesheet" type="text/css" href="../css/newstyle.css">
+                    <style type="text/css">
+                        section>h5 {
+                            color: #d5d6db;
+                        }
+                    table tr th:last-child,
+                    table tr td:last-child {
+                        text-align: right;
+                    }
+                    .summary .row p,
+                    #income-forcast p{
+                        width: 50%;
+                        float: left;
+                    }
+                    .summary .row div,
+                    #income-forcast .row div {
+                        display: inline-block;
+                        width: 50%;
+                        text-align: right;
+                    }
+                    .legend {
+                        position: absolute;
+                        right: 15px;
+                        top: 55px;
+                    }
+                    .legend>ul {
+                        display: block;
+                    }
+                    .legend>ul>li {
+                        background-image: url(../img/icon_wenhao@2x.png);
+                        background-size: 10px;
+                        background-position: right center;
+                        background-repeat: no-repeat;
+                        padding-right: 20px;
+                    }
+                    .legend>ul>li>a {
+                        color: #1680d4;
+                    }
+                    .legend ul img {
+                        display: inline-block;
+                        float: left;
+                        margin-top: 7px;
+                        margin-right: 2px;
+                    }
+                    #income-forcast div:first-child {
+                        border-top:none;
+                    }
+                    </style>
+                    <script type="text/javascript" src="../js/jquery-1.10.2.js"></script>
+                    <script type="text/javascript" src="../js/highcharts.js"></script>
+                    <script type="text/javascript" src="../js/handlebars-v4.0.5.js"></script>
+                    <script type="text/javascript" src="../js/common/urlUtil.js"></script>
+                    <script>function
+                        setupWebViewJavascriptBridge(callback) {
+                        if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
+                        if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }
+                        window.WVJBCallbacks = [callback];
+                        var WVJBIframe = document.createElement('iframe');
+                        WVJBIframe.style.display = 'none';
+                        WVJBIframe.src = 'wvjbscheme://__BRIDGE_LOADED__';
+                        document.documentElement.appendChild(WVJBIframe);
+                        setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0);
+                    }
+                    setupWebViewJavascriptBridge(function(bridge) {
+                                                 alert("进入注册");
+                                                 var uniqueId = 1
+                                                 function log(message, data) {
+                                                 var log = document.getElementById('log')
+                                                 var el = document.createElement('div')
+                                                 el.className = 'logLine'
+                                                 el.innerHTML = uniqueId++ + '. ' + message + ':<br/>' + JSON.stringify(data)
+                                                 if (log.children.length) { log.insertBefore(el, log.children[0]) }
+                                                 else { log.appendChild(el) }
+                                                 }
+                                                 bridge.registerHandler('testJavascriptHandler', function(data, responseCallback) {
+                                                                        log('ObjC called testJavascriptHandler with', data)
+                                                                        var responseData = { 'Javascript Says':'Right back atcha!' }
+                                                                        log('JS responding with', responseData)
+                                                                        responseCallback(responseData)
+                                                                        })
+                                                 var callbackButton = document.getElementById('buttons').appendChild(document.createElement('button'))
+                                                 callbackButton.innerHTML = '测试回调'
+                                                 callbackButton.onclick = function(e) {
+                                                 alert('回调进行"')
+                                                 e.preventDefault()
+                                                 bridge.callHandler('testObjcCallback', '', function(response) {
+                                                                    
+                                                                    })
+                                                 }
+<!--                                                 var callbackButton = $(".contact-Dt").appendChild(document.createElement('button'));-->
+<!--                                                 callbackButton.onclick = function(e) {-->
+<!--                                                 alert('回调开始');-->
+<!--                                                 e.preventDefault();-->
+<!--                                                 bridge.callHandler('testObjcCallback', {'foo': 'bar'}, function(response) {-->
+<!--                                                                    log('JS got response', response)-->
+<!--                                                                    alert('回调进行"');-->
+<!--                                                                    })-->
+<!--                                                 alert('回调结束"');-->
+<!--                                                 }-->
+                                                 });</script>
+                    <title>测评结果</title>
+    </head>
+    <body>
+        <div id='buttons'></div> <div id='log'></div>
+        <div class="container">
+            <section class="summary">
+                <h5 class="border-top light-gray" style="font-size: 14px;">您的投资配置方案如下  <span style="font-size: 12px;">预期年化收益率</span><span class="annual-ave-rate blue">x-xx%</span></h5>
+                <div id="contentchart" style="height: 130px; width: 100%; margin-bottom: 15px;background-color: #2c2e43;"></div>
+                <div class="legend">
+                    <ul>
+                        <li>
+                            <img src="../img/icon1@2x.png" width="18px">
+                                <a href="class-low-detail.html">稳健型网贷产品</a>
+                                <span id="low-per"></span>
+                                </li>
+                        <li>
+                            <img src="../img/icon2@2x.png" width="18px">
+                                <a href="class-mid-detail.html">平衡型网贷产品</a>
+                                <span id="mid-per"></span>
+                                </li>
+                        <li>
+                            <img src="../img/icon3@2x.png" width="18px">
+                                <a href="class-high-detail.html">进取型网贷产品</a>
+                                <span id="high-per"></span>
+                                </li>
+                    </ul>
+                </div>
+            </section>
+            <section id="income-forcast">
+                <div class="row">
+                    <p>设一年期产品投资金额：</p>
+                    <div id="default-amount"></div>
+                </div>
+                <div class="row">
+                    <p>预期收益为：</p>
+                    <div id="income"></div>
+                </div>
+                <div class="row">
+                    <p>预期年化收益率：</p>
+                    <div id="annual-rate"></div>
+                </div>
+            </section>
+            <div align="center" style="padding: 1px 0 10px 0;">
+                <button class="btn contact-Dt">联系专家</button>
+            </div>
+            <section>
+                <h5>未来投资收益演示</h5>
+                <form>
+                    <div class="row">
+                        <label for="invest-sum">您的投资金额为：</label>
+                        <input type="text" id="invest-sum" placeholder="￥0" style="padding-right: 15px;">
+                            </div>
+                    <div class="row">
+                        <label for="invest-time">您的投资时间为：</label>
+                        <select id="invest-time" style="padding-right: 15px;">
+                            <option value="0.04">15天</option>
+                            <option value="0.08">1个月</option>
+                            <option value="0.25">3个月</option>
+                            <option value="0.5">6个月</option>
+                            <option value="0.75">9个月</option>
+                            <option value="1" selected="selected">12个月</option>
+                            <option value="2">24个月</option>
+                        </select>
+                    </div>
+                </form>
+            </section>
+            <div align="center" style="padding: 5px 0 10px 0;">
+                <button class="btn" onclick="dod()">开始计算</button>
+            </div>
+        </div>
+        <script type="text/javascript" src="../js/for-detail.js"></script>
+    </body>
+</html>

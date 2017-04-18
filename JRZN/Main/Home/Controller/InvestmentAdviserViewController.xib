@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InvestmentAdviserViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKU-rm-fN6">
+                    <rect key="frame" x="109.5" y="91" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="cmg-8a-uct"/>
+                        <constraint firstAttribute="height" constant="100" id="iem-89-iNJ"/>
+                    </constraints>
+                    <state key="normal" image="icon_touziguwen.png"/>
+                    <connections>
+                        <action selector="appointmentContactClick:" destination="-1" eventType="touchUpInside" id="eF6-9f-lTb"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我们可以为您提供最专业的，最适合以及最佳的投资方案，我们为您定制和管理个性化的方案，以及多元化的投资组合。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NkY-iZ-FBZ">
+                    <rect key="frame" x="20" y="201" width="280" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="DcK-5O-nRA"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.16862745098039217" green="0.1803921568627451" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hV9-7f-7cP">
+                    <rect key="frame" x="0.0" y="281" width="320" height="6"/>
+                    <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="6" id="dLc-dX-Pi3"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您只需花1-2分钟时间就可以通过以下问卷，得出您的投资风险偏好测评结果。我们的智能投顾系统会根据您的风险承受能力为您定制私人化的网贷产品投资配置方案。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hc-QF-Otx">
+                    <rect key="frame" x="20" y="307" width="280" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="g7S-a2-H0W"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.16862745098039217" green="0.1803921568627451" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Nc-5b-vuO">
+                    <rect key="frame" x="109.5" y="387" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="3CF-xL-Ss4"/>
+                        <constraint firstAttribute="height" constant="100" id="5d7-UT-Etm"/>
+                    </constraints>
+                    <state key="normal" image="icon_ceping.png"/>
+                    <connections>
+                        <action selector="riskAssessmentClick:" destination="-1" eventType="touchUpInside" id="jWt-8c-uXU"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="4hc-QF-Otx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="4Pn-yx-IuA"/>
+                <constraint firstItem="hV9-7f-7cP" firstAttribute="top" secondItem="NkY-iZ-FBZ" secondAttribute="bottom" constant="20" id="5sw-68-w58"/>
+                <constraint firstAttribute="trailing" secondItem="4hc-QF-Otx" secondAttribute="trailing" constant="20" id="CZB-Xv-Wq6"/>
+                <constraint firstItem="NkY-iZ-FBZ" firstAttribute="top" secondItem="SKU-rm-fN6" secondAttribute="bottom" constant="10" id="GW5-2W-3CR"/>
+                <constraint firstItem="hV9-7f-7cP" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="JfI-eJ-MdU"/>
+                <constraint firstAttribute="trailing" secondItem="hV9-7f-7cP" secondAttribute="trailing" id="iuA-EA-va3"/>
+                <constraint firstItem="SKU-rm-fN6" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kCm-g8-gIF"/>
+                <constraint firstItem="4hc-QF-Otx" firstAttribute="top" secondItem="hV9-7f-7cP" secondAttribute="bottom" constant="20" id="mQq-35-n1t"/>
+                <constraint firstItem="8Nc-5b-vuO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oPT-dZ-0tz"/>
+                <constraint firstItem="NkY-iZ-FBZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="oeY-0u-OZa"/>
+                <constraint firstItem="8Nc-5b-vuO" firstAttribute="top" secondItem="4hc-QF-Otx" secondAttribute="bottom" constant="10" id="pe3-HE-iag"/>
+                <constraint firstItem="hV9-7f-7cP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vjA-wj-x4Q"/>
+                <constraint firstItem="hV9-7f-7cP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yZ0-Ib-hKb"/>
+                <constraint firstAttribute="trailing" secondItem="NkY-iZ-FBZ" secondAttribute="trailing" constant="20" id="ycy-vD-vlr"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="482" y="321"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_ceping.png" width="127" height="127"/>
+        <image name="icon_touziguwen.png" width="127" height="127"/>
+    </resources>
+</document>

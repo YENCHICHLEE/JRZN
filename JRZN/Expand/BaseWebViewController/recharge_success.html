@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords"
+          content="投资理财, 互联网金融, 网络投融资平台, 网络理财, 互联网理财, 固定收益, 100% 本息保障, 汇盈金服, m.huiyingdai.com, wap, touch">
+    <meta name="description"
+          content="汇盈金服 huiyingdai.com - 提供安全、精准、高效的网络投融资服务。汇盈金服有严格的风险控制,大型机构100%本息担保,第三方资金托管,保障资金安全。">
+    <meta name="apple-mobile-web-app-title" content="点融网">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>充值成功</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" type="image/png" href="img/favshare_icon">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="img/app-icon72x72@2x.png">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="汇盈金服"/>
+    <link rel="apple-touch-icon-precomposed" href="img/app-icon72x72@2x.png">
+
+    <meta name="msapplication-TileImage" content="img/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+   <!-- <script type="text/javascript" language="javascript">
+       function showHtmlcallJava(){
+        window.android.clickOnAndroid()
+        }
+    </script>-->
+    <script>
+        function testDiv() {
+            document.getElementById("show").innerHTML = document.getElementsByTagName("html")[0].innerHTML;
+        }
+
+        function testClick() {
+            var str1 = document.getElementById("text1").value;
+            var str2 =  document.getElementById("text1").value;
+
+            //send message to native
+            var data = {id: 1, content: "this is html test <img src=\"a.png\"/> test\r\nhahaha"};
+            window.WebViewJavascriptBridge.send(
+                data
+                , function(responseData) {
+                    document.getElementById("show").innerHTML = "repsonseData from java, data = " + responseData
+                }
+            );
+
+        }
+
+        function testClick1() {
+            var str1 = document.getElementById("text0").innerHTML;
+            var str2 = document.getElementById("text1").innerHTML;
+
+            //call native method
+            window.WebViewJavascriptBridge.callHandler(
+                'submitFromWeb'
+                , {'param':[
+                            {'status':str1},
+                            {'money':str2}]
+                             }
+                , function(responseData) {
+                    document.getElementById("show").innerHTML = "send get responseData from java, data = " + responseData
+                }
+            );
+        }
+
+        function bridgeLog(logContent) {
+            document.getElementById("show").innerHTML = logContent;
+        }
+
+        function connectWebViewJavascriptBridge(callback) {
+            if (window.WebViewJavascriptBridge) {
+                callback(WebViewJavascriptBridge)
+            } else {
+                document.addEventListener(
+                    'WebViewJavascriptBridgeReady'
+                    , function() {
+                        callback(WebViewJavascriptBridge)
+                    },
+                    false
+                );
+            }
+        }
+
+        connectWebViewJavascriptBridge(function(bridge) {
+            bridge.init(function(message, responseCallback) {
+                console.log('JS got a message', message);
+                var data = {
+                    'Javascript Responds': 'Wee!'
+                };
+                console.log('JS responding with', data);
+                responseCallback(data);
+            });
+
+            bridge.registerHandler("functionInJs", function(data, responseCallback) {
+                document.getElementById("show").innerHTML = ("data from Java: = " + data);
+                var responseData = "Javascript Says Right back aka!";
+                responseCallback(responseData);
+            });
+        })
+    </script>
+</head>
+<body>
+<!--projects-->
+<div class="container">
+	<ul class="recharge_success">
+    	<li><img src="images/re-success.png" class="re_success"></li>
+        <li class="re_tip" id="text0">充值成功</li>
+        <li>充值金额：<span id="text1">100,000,000</span>元</li>
+        <li><a onclick="testClick1()" class="re_btn">马上投资</a></li>
+    </ul>
+</div>
+</body>
+</html>
